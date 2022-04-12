@@ -1,6 +1,8 @@
 import { Component, ElementRef, ViewChild  } from '@angular/core';
 import {UserService} from './user.service'
 import { User } from './User';
+import { Router } from '@angular/router';
+
 declare var require: any;
 
 import * as pdfMake from "pdfmake/build/pdfmake";
@@ -18,7 +20,7 @@ export class AppComponent {
 
   
   users: User[] =[];
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private route:Router) { }
 
   ngOnInit(): void {
     this.userService.getUsers().subscribe((data: User[]) => {
@@ -37,4 +39,21 @@ export class AppComponent {
      
   }
 
+  userlogin = true;
+  userregister = false;
+  //Buttons clicks functionalities 
+  user_register()
+  {
+    this.userlogin = false;
+    this.userregister = true;
+  }
+  user_login()
+  {
+    this.userlogin = true;
+    this.userregister = false;
+  }
+  Next() {
+    this.route.navigate(['/user']);
+  }
 }
+

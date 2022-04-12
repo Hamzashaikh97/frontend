@@ -1,21 +1,45 @@
-<div class="container">
+<header>
+    <br>
+  
+    <div class ="container">
+  
+    <div  class = "card" style="background-color: steelblue;">
+      <h2 class="" style="padding-left: 10px;" > RMS</h2>
+      <h4 class="" style="padding-left: 10px;" > National Clearing Company of Pakistan ltd.</h4>
+    </div>
+    </div>
+  </header>
+<br>
+<div id="pdfTable" #pdfTable class ="container">
+  <div class = "card">
+      <h3 class="text-center">  Sample report</h3>
+      <div class = "card-body">
+          <table   class="table table-striped">
+              <thead>
+                  <th>Id</th>
+                  <th> Name</th>
+                  <th> Role Name</th>
+              </thead>
+              <tbody>
+                  <tr *ngFor = "let user of users">
+                      <td> {{ user.id}}</td>
+                      <td> {{ user.name}}</td>
+                      <td> {{ user.role}}</td>
 
-    <form>
-    <div class="row">
-        <div>
-            Name
-        </div>
-        <div>
-            <input type="text" placeholder="rms nccpl">
-        </div>
-    </div>
-    <div class="row">
-        <div>
-            Role
-        </div>
-        <div>
-            <input type="text" placeholder="rms nccpl">
-        </div>
-    </div>
-</form>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+  <hr>
 </div>
+<div class="container">
+    <div class="row">
+      <div class="col-10">
+        <button class="btn btn-warning" (click)="Back();">Back</button>
+      </div>
+      <div >
+        <button class="btn btn-primary"  (click)="downloadAsPDF();">Export To PDF</button>
+      </div>
+    </div>
+    </div>
