@@ -12,8 +12,9 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 export class LoginComponent implements OnInit {
   
   loginUser : boolean  = true;
-
-  newUser: any ={name:"Hassan",role: "Check"};
+  name:string ="";
+  role:string ="";
+  newUser: any = {name:this.name,role:this.role};
 
   constructor(private route: Router, private formBuilder: FormBuilder, private userService: UserService) { 
     this.loginUser = true;
@@ -37,12 +38,15 @@ export class LoginComponent implements OnInit {
     this.userregister = false;
   }
   Next() {
+    console.log(this.name,"name is this");
     this.goPost();
     this.route.navigate(['/user']);
     this.loginUser = false;
   }
   goPost()
   {
-    this.userService.postUser(this.newUser).subscribe(data => this.newUser.push(data));;
+    this.userService.postUser(this.name,this.role);
+    
+      // ((data:any ) => this.newUser.push(data));
   }
 }

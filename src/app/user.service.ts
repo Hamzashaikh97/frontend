@@ -25,9 +25,11 @@ export class UserService {
   }
 
 
-  postUser(user:User): Observable<User>
+  postUser( name:string,  role :string)
   {
-    return this.http.post<User>(`${this.baseUrl}`,user,httpOptions);
+    return this.http.post(`${this.baseUrl}`,{name,role},httpOptions).subscribe(data =>  {
+      console.log(data);
+    });
 
   }
 }
