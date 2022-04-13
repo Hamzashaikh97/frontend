@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
   goPost()
   {
     this.userService.postUser(this.name,this.role);
-    
+
       // ((data:any ) => this.newUser.push(data));
   }
 }

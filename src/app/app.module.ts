@@ -7,13 +7,15 @@ import { UserComponent } from './user/user.component';
 import { EmployeeDataComponent } from './employee-data/employee-data.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MainMenuComponent } from './main-menu/main-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     EmployeeDataComponent,
-    LoginComponent
+    LoginComponent,
+    MainMenuComponent
   ],
   imports: [
     BrowserModule,
