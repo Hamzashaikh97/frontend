@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {UserService} from '../user.service'
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http';
 
 
 @Component({
@@ -13,8 +14,8 @@ export class LoginComponent implements OnInit {
   
   loginUser : boolean  = true;
   name:string ="";
-  role:string ="";
-  newUser: any = {name:this.name,role:this.role};
+  password:string ="";
+  newUser: any = {name:this.name,role:this.password};
 
   constructor(private route: Router, private formBuilder: FormBuilder, private userService: UserService) { 
     this.loginUser = true;
@@ -39,13 +40,22 @@ export class LoginComponent implements OnInit {
   }
   Next() {
     console.log(this.name,"name is this");
-    this.goPost();
-    this.route.navigate(['/user']);
-    this.loginUser = false;
+    this.userService.getLogin(this.name).subscribe(
+(response: any)=>{
+  console.log(response);
+  
+  this.route.navigate(['/main']);
+  this.loginUser = false;
+},
+    (errorResponse: HttpErrorResponse) => {
+      console.log(errorResponse.message);
+      alert("Inavlid username or password");
+    }
+  )
   }
   goPost()
   {
-    this.userService.postUser(this.name,this.role);
+    this.userService.getLogin(this.name);
 
       // ((data:any ) => this.newUser.push(data));
   }
