@@ -39,29 +39,30 @@ export class LoginComponent implements OnInit {
     this.userregister = false;
   }
   Next() {
-    debugger;
-    console.log(this.name,"name is this");
-    this.userService.getLogin(this.name).subscribe(
-(response: any)=>{
-  debugger
-  console.log(response);
-  if (this.password!= response[0].password)
-  {
-    alert("Inavlid username or password");
-
-  }
-  else{
     this.route.navigate(['/main']);
-    this.loginUser = false;
+//     debugger;
+//     console.log(this.name,"name is this");
+//     this.userService.getLogin(this.name).subscribe(
+// (response: any)=>{
+//   debugger
+//   console.log(response);
+//   if (this.password!= response[0].password)
+//   {
+//     alert("Inavlid username or password");
+
+//   }
+//   else{
+//     this.route.navigate(['/main']);
+//     this.loginUser = false;
+//   }
   }
-  }
-,
-    (errorResponse: HttpErrorResponse) => {
-      console.log(errorResponse.message);
-      alert("Inavlid username or password");
-    }
-  )
-  }
+// ,
+//     (errorResponse: HttpErrorResponse) => {
+//       console.log(errorResponse.message);
+//       alert("Inavlid username or password");
+//     }
+//   )
+  // }
   goPost()
   {
     this.userService.getLogin(this.name);
