@@ -34,6 +34,7 @@ export class MainMenuComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    debugger;
   }
   userlogin = true;
   userregister = false;
@@ -65,6 +66,12 @@ export class MainMenuComponent implements OnInit {
           console.log(response);
           //this.router.navigate(['/user']);
           alert("Record added successfully!");
+          this.cmId="";
+          this.cmName="";
+          this.exposure=0;
+          this.exposureDemand=0;
+          this.margin=0;
+          this.symbol="";
 
         },
         (errorResponse: HttpErrorResponse) => {

@@ -18,7 +18,13 @@ const htmlToPdfmake = require("html-to-pdfmake");
 export class AppComponent {
   title = 'angular-frontend';
 
+
+
   
+
+  
+      dynamicDownload: any;
+   
   users: User[] =[];
   constructor(private userService: UserService, private route:Router) { }
 
@@ -32,12 +38,19 @@ export class AppComponent {
   pdfTable!: ElementRef;
   
   public downloadAsPDF() {
+    this.dynamicDownload= HTMLElement;
     const pdfTable = this.pdfTable.nativeElement;
     var html = htmlToPdfmake(pdfTable.innerHTML);
     const documentDefinition = { content: html };
     pdfMake.createPdf(documentDefinition).download(); 
+    this.dynamicDownload({
+      fileName: 'My Report',
+      text: JSON.stringify(documentDefinition)
+    });
      
   }
+
+
 
   userlogin = true;
   userregister = false;
