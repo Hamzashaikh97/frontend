@@ -41,14 +41,16 @@
 
                <button class="btn btn-success"   (click)="Next();"> Login1 </button> -->
 <style>
-  body,
+  body{
+    font-family: 'Times New Roman', Times, serif
+  }
   html {
     height: 100%;
   }
 
   .bg {
     /* The image used */
-    background-image: url("https://cdn1.vectorstock.com/i/1000x1000/28/00/stock-exchange-background-vector-27122800.jpg");
+    background-image: url("../../assets/images/bk_image.jpg");
     /* Full height */
     height: auto;
     /* Center and scale the image nicely */
@@ -65,7 +67,7 @@
     font-family: 'Times New Roman', Times, serif
   }
 </style>
-<section class="vh-100 bg" style="background-color: #9A616D;" *ngIf="loginUser">
+<section class="vh-100 bg" style="background-color: darkblue;" *ngIf="loginUser">
 
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">

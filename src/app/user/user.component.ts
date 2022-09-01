@@ -38,6 +38,15 @@ export class UserComponent  {
   
    
  }
+
+ Fecth(){
+  this.router.navigate(['/user']);
+}
+
+Report()
+{
+  this.router.navigate(['/main']);
+}
   @ViewChild('pdfTable')
   pdfTable!: ElementRef;
   public getReport(): void {

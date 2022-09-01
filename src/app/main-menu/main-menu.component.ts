@@ -49,6 +49,8 @@ export class MainMenuComponent implements OnInit {
     this.userlogin = true;
     this.userregister = false;
   }
+
+  
   Report()
     {
       this.report = true;
