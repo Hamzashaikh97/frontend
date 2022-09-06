@@ -206,7 +206,7 @@
           <div class="col-md-4"></div>
 
         </div>
-        <table class="table table-striped">
+        <table class="table table-striped" id="excelReport">
           <thead>
             <th>Cm Id</th>
             <th> CM Name</th>
@@ -236,11 +236,15 @@
   </div>
   <div class="container" *ngIf="success">
     <div class="row">
-      <div class="col-10">
+      <div class="col-8">
         <button class="btn btn-warning" (click)="Back();">Back</button>
       </div>
       <div>
-        <button class="btn btn-primary" (click)="downloadAsPDF();">Export To PDF</button>
+        <button class="btn btn-primary"  (click)="exportexcel();">Export To Excel</button>
+      </div>
+      <div class="col-1"></div>
+      <div>
+        <button class="btn btn-primary "  (click)="downloadAsPDF();">Export To PDF</button>
       </div>
     </div>
   </div>

@@ -39,18 +39,18 @@ export class LoginComponent implements OnInit {
   Next() {
 
     //debugger;
-    /*console.log(this.name, "name is this");
+    console.log(this.name, "name is this");
     this.userService.getLogin(this.name).subscribe(
       (response: any) => {
-        debugger
+        //debugger
         console.log(response);
         if (this.password != response[0].password) {
           alert("Inavlid username or password");
 
         }
-        else {*/
+        else {
           this.route.navigate(['/main']);
-          this.loginUser = false;/*
+          this.loginUser = false;
         }
       }
       ,
@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
         console.log(errorResponse.message);
         alert("Inavlid username or password");
       }
-    )*/
+    )
   }
   goPost() {
     this.userService.getLogin(this.name);

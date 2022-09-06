@@ -7,6 +7,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 declare var require: any;
 
+import * as XLSX from 'xlsx';
 import * as pdfMake from "pdfmake/build/pdfmake";
 import * as pdfFonts from "pdfmake/build/vfs_fonts";
 import { BasicReport } from '../BasicReport';
@@ -68,6 +69,17 @@ Report()
     const documentDefinition = { content: html };
     pdfMake.createPdf(documentDefinition).download(); 
      
+  }
+
+  public exportexcel()
+  {
+    let element = document.getElementById('excelReport');
+    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+    XLSX.writeFile(wb, 'Sample_Report.xlsx'); 
   }
   Back()
   {
