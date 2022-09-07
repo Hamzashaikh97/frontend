@@ -208,13 +208,14 @@
         </div>
         <table class="table table-striped" id="excelReport">
           <thead>
-            <th>Cm Id</th>
-            <th> CM Name</th>
-            <th> Symbol</th>
-            <th>Margin</th>
-            <th>Exposure</th>
-            <th>Exposure Demand</th>
-
+            <tr>
+            <th scope="col">Cm Id</th>
+            <th scope="col">CM Name</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Margin</th>
+            <th scope="col">Exposure</th>
+            <th scope="col">Exposure Demand</th>
+          </tr>
           </thead>
           <tbody>
             <tr *ngFor="let record of records">
@@ -224,9 +225,6 @@
               <td> {{ record.margin}}</td>
               <td> {{ record.exposure}}</td>
               <td> {{ record.exposureDemand}}</td>
-
-
-
             </tr>
           </tbody>
         </table>
