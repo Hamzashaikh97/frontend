@@ -42,8 +42,15 @@
                <button class="btn btn-success"   (click)="Next();"> Login1 </button> -->
 <style>
   body {
-    font-family: 'Times New Roman', Times, serif
+    font-family: 'Times New Roman', Times, serif;
+    
+  height: 5000px; /* Make this site really long */
+  width: 5000px; /* Make this site really wide */
+  overflow-y: hidden;
+  overflow-x: hidden;
   }
+
+
 
   html {
     height: 100%;
@@ -52,13 +59,14 @@
   .bg {
     /* The image used */
     background-image: url("../../assets/images/bk_image.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
     /* Full height
     max-height: auto;
     max-width: auto;
     /* Center and scale the image nicely */
-    /* background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;  */
+   
+    background-size: cover; 
 
 
   }
@@ -74,17 +82,12 @@
 
 
 
-
-
-
-
-
 <!-- <section class="vh-100 bg  bg-image  height: 100vh" style="background-color: darkblue;" *ngIf="loginUser"> -->
   <section>
-<div class="bg-image" style="background-image: url('../../assets/images/bk_image.jpg');
+<div class="bg-image bg" style="background-image: url('../../assets/images/bk_image.jpg');
          height: 100vh">
 
-  <div class="container py-5 h-100">
+  <div class="container py-0 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-xl-10">
         <div class="card" style="border-radius: 1rem;">
