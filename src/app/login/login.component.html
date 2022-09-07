@@ -52,13 +52,13 @@
   .bg {
     /* The image used */
     background-image: url("../../assets/images/bk_image.jpg");
-    /* Full height */
+    /* Full height
     max-height: auto;
     max-width: auto;
     /* Center and scale the image nicely */
-    background-position: center;
+    /* background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;  */
 
 
   }
@@ -71,14 +71,25 @@
     font-family: 'Times New Roman', Times, serif
   }
 </style>
-<section class="vh-100 bg" style="background-color: darkblue;" *ngIf="loginUser">
+
+
+
+
+
+
+
+
+<!-- <section class="vh-100 bg  bg-image  height: 100vh" style="background-color: darkblue;" *ngIf="loginUser"> -->
+  <section>
+<div class="bg-image" style="background-image: url('../../assets/images/bk_image.jpg');
+         height: 100vh">
 
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-xl-10">
         <div class="card" style="border-radius: 1rem;">
           <div class="row g-0 ml-5">
-            <div class="col-md-6 col-lg-5 d-none d-md-block " style="margin-top:16% ">
+            <div class="col-md-6 col-lg-5 d-none d-md-block  " style="margin-top:16% ">
               <img src="https://askarisecurities.com.pk/wp-content/uploads/2020/06/nccpl-logo.jpg" alt="login form"
                 class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
             </div>
@@ -135,6 +146,7 @@
       </div>
     </div>
   </div>
+</div>
 </section>
 
 <router-outlet></router-outlet>
